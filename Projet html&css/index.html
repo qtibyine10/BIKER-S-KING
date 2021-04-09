@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+</head>
+<body>
+    <section>
+        <header>
+            <a href="#" class="logo">BIKER'S KING</a>
+            <div class="toggle" onclick="togglrmenu();"></div>
+            <ul class="navigation">
+                <li><a target="_blank" href="index.html" style="--i:1;">HOME</a></li>
+                <li><a target="_blank" href="MOTOCYCLES/moto.html" style="--i:2;">MOTOCYCLES</a></li>
+                <li><a target="_blank" href="HELEMTS/index.html" style="--i:3;">HELEMTS</a></li>
+                <li><a target="_blank" href="CLOHTES/index.html" style="--i:4;">CLOHTES</a></li>
+                <li><a target="_blank" href="ACCESSOIRESS/index.html" style="--i:5;">ACCESSOIRES</a></li>
+                
+            </ul>
+        </header>
+        <div class="container">
+            <div class="box" style="--i:5;">
+                <div class="imageBx">
+                    <img src="pic/1.jpg">
+                </div>
+            </div>
+            <div class="box"  style="--i:6;">
+                <div class="imageBx">
+                    <img src="pic/2.jpg">
+                </div>
+            </div>
+            <div class="box"  style="--i:7;">
+                <div class="imageBx">
+                    <img src="pic/3.jpg">
+                </div>
+            </div>
+            <div class="box"  style="--i:8;">
+                <div class="imageBx">
+                    <img src="pic/4.jpg">
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <ul class="sci">
+                <li ><a href="#">Facebook</a></li>
+                <li> <a href="#">Twitter</a></li>
+                <li> <a href="#">Instagram</a></li>
+            </ul>
+            <p class="copyrightText">
+                About : <a target="_blank" href="ABOUT US/ACHRAF/ACHRAF.html">Achraf</a>
+                 & 
+                 <a target="_blank" href="ABOUT US/KARIM/KARIM.html">Karim</a></p>
+        </div>
+
+
+    </section>
+    <script>
+        let imageBx=document.querySelectorAll('.imageBx');
+        imageBx.forEach(popup => popup.addEventListener('click', ()=>{
+            popup.classList.toggle('active');
+        }))
+
+
+      function togglrmenu(){
+          const menuToggle = document.querySelector('.toggle');
+          const navigation = document.querySelector('.navigation');
+          menuToggle.classList.toggle('active');
+          navigation.classList.toggle('active');
+      }  
+
+
+    </script>
+</body>
+</html>

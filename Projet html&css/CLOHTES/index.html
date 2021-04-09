@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CLOHTES</title>
+	
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<a href="../index.html" class="logo" alt="Back to home">BIKER'S KING</a>
+	
+	<h1><i class=" fa fa-shopping-cart"></i></h1>
+
+	<section>
+		<div class="item">
+			<img src="pic/1.png">
+			<p>AGILE LEATHER JACKET</p>
+			<h6>8,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/2.png">
+			<p>Alpinestars ATEM V4 LEATHER JACKET 2020</p>
+			<h6>2,990 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/3.png">
+			<p>ALPINESTARS LEATHER JACKET – GP PLUS R V2</p>
+			<h6>3,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/4.png">
+			<p>BERING. TENUE RUBICON : PANTALON + VESTE tout saison.</p>
+			<h6>7,300 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+
+	<section>
+		<div class="item">
+			<img src="pic/5.png">
+			<p>Blouson moto en cuir RACING 3 Rouge Noir Blanc</p>
+			<h6>7,200 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/6.png">
+			<p>Blouson sport RS-400-ST 2.0 noir/p>
+			<h6>2,300 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/7.png">
+			<p>DAINESE AIR CHRONO 2 JACKET TEXTILE</p>
+			<h6>3,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/8.png">
+			<p>DAINESE AIR FRAME D1 TEX JACKET</p>
+			<h6>3,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="pic/9.png">
+			<p>Imperméable Hero – pantalon/jacket</p>
+			<h6>1,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/10.png">
+			<p>Manteau serra evo man noir</p>
+			<h6>2,049 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/11.png">
+			<p>Veste de moto en tissu AVRO D2</p>
+			<h6>3,190 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/12.png">
+			<p>Veste homme blond noir           
+			</p>
+			<h6>2,390 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<div class="select">
+		
+	</div>
+
+    <section>
+		<div class="item">
+			<img src="pic/13.png">
+			<p>SPORTMODULAR MULTI E2205 RAY CARBON/WHITE/YELLOW FLUO</p>
+			<h6>2,050 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/14.png">
+			<p>Vquattro Collection Blousons moto homologués X track noir</p>
+			<h6>2,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/15.png">
+			<p>Vquattro Collection Blousons moto homologués Tarah beige</p>
+			<h6>1,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/16.png">
+			<p>Vquattro Collection Blousons moto homologués Lucas chocolat</p>
+			<h6>1,430 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	
+	</section>
+	
+</body>
+</html>
+
+<script type="text/javascript">
+	var noti = document.querySelector('h1');
+	var select = document.querySelector('.select');
+	var button = document.getElementsByTagName('button');
+	for(var but of button){
+		but.addEventListener('click', (e)=>{
+			var add = Number(noti.getAttribute('data-count') || 0);
+			noti.setAttribute('data-count', add +1);
+			noti.classList.add('zero')
+
+			// image --animation to cart ---//
+			var image = e.target.parentNode.querySelector('img');
+			var span = e.target.parentNode.querySelector('span');
+			var s_image = image.cloneNode(false);
+			span.appendChild(s_image);
+			span.classList.add("active");
+			setTimeout(()=>{
+				span.classList.remove("active");
+				span.removeChild(s_image);
+			}, 500); 
+			
+
+			// copy and paste //
+			var parent = e.target.parentNode;
+			var clone = parent.cloneNode(true);
+			select.appendChild(clone);
+			clone.lastElementChild.innerText = "Buy-now";
+			
+			if (clone) {
+				noti.onclick = ()=>{
+					select.classList.toggle('display');
+				}	
+			}
+		})
+	}
+	
+</script>

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HELEMTS</title>
+	
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<a href="../index.html" class="logo" alt="Back to home">BIKER'S KING</a>
+	
+	<h1><i class=" fa fa-shopping-cart"></i></h1>
+
+	<section>
+		<div class="item">
+			<img src="pic/1.png">
+			<p>CMS GTC VOYAGER</p>
+			<h6>2,470 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/2.png">
+			<p>LS2 FF399 VALIANT MATT BLACK</p>
+			<h6>2,990 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/3.png">
+			<p>LS2 FF900 VALIANT II TITANE MATT</p>
+			<h6>3,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/4.png">
+			<p>VCOMPACT ST E2205 MONO – BLANC</p>
+			<h6>4,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+
+	<section>
+		<div class="item">
+			<img src="pic/5.png">
+			<p>COMPACT ST E2205 MONO – NOIR MAT</p>
+			<h6>4,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/6.png">
+			<p>COMPACT ST E2205 MULTI – DETROIT BLANC NOIR</p>
+			<h6>4,890 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/7.png">
+			<p>SPORTMODULAR MONO E2205 – CARBON/WHITE</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/8.png">
+			<p>SPORTMODULAR MONO E2205 CARBONE BRILLANT</p>
+			<h6>11,500 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<section>
+		<div class="item">
+			<img src="pic/9.png">
+			<p>SPORTMODULAR MONO E2205 MATT CARBON</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/10.png">
+			<p>SPORTMODULAR MULTI E2205 COVER MATT GUNMETAL/WHITE</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/11.png">
+			<p>SPORTMODULAR MULTI E2205 – LAYER CARBON/RED/BLUE</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/12.png">
+			<p>SPORTMODULAR MULTI E2205 LAYER CARBON/RED/WHITE</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	</section>
+	<div class="select">
+		
+	</div>
+
+    <section>
+		<div class="item">
+			<img src="pic/13.png">
+			<p>SPORTMODULAR MULTI E2205 RAY CARBON/WHITE/YELLOW FLUO</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+			
+		</div>
+		<div class="item">
+			<img src="pic/14.png">
+			<p>SPORTMODULAR MULTI E2205 REFRACTIVE CARBON/SILVER</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+		<div class="item">
+			<img src="pic/15.png">
+			<p>SPORTMODULAR MULTI E2205 TRICOLORE MATT CARBON/ITALY</p>
+			<h6>12,000 DHS</h6>
+			<span></span>
+			<button>Add-cart</button>
+		</div>
+	
+	</section>
+	
+</body>
+</html>
+
+<script type="text/javascript">
+	var noti = document.querySelector('h1');
+	var select = document.querySelector('.select');
+	var button = document.getElementsByTagName('button');
+	for(var but of button){
+		but.addEventListener('click', (e)=>{
+			var add = Number(noti.getAttribute('data-count') || 0);
+			noti.setAttribute('data-count', add +1);
+			noti.classList.add('zero')
+
+			// image --animation to cart ---//
+			var image = e.target.parentNode.querySelector('img');
+			var span = e.target.parentNode.querySelector('span');
+			var s_image = image.cloneNode(false);
+			span.appendChild(s_image);
+			span.classList.add("active");
+			setTimeout(()=>{
+				span.classList.remove("active");
+				span.removeChild(s_image);
+			}, 500); 
+			
+
+			// copy and paste //
+			var parent = e.target.parentNode;
+			var clone = parent.cloneNode(true);
+			select.appendChild(clone);
+			clone.lastElementChild.innerText = "Buy-now";
+			
+			if (clone) {
+				noti.onclick = ()=>{
+					select.classList.toggle('display');
+				}	
+			}
+		})
+	}
+	
+</script>
